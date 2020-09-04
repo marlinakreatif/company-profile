@@ -20,10 +20,25 @@ class Home extends Component<HomeProps, HomeState> {
     scrollIndex: 0,
   };
 
-  handleScroll = (scrollIndex: number) => {
-    if (scrollIndex > -1 && scrollIndex < 4 && this.mainContainerRef) {
+  scrollUp = () => {
+    const { scrollIndex } = this.state;
+    const scrollTop = this.mainContainerRef.current!.scrollTop;
+    const clientHeight = this.mainContainerRef.current!.clientHeight;
+    const isMoreThenHalve =
+      scrollTop >= clientHeight * scrollIndex + clientHeight / 4;
+    if (isMoreThenHalve) {
+      this.mainContainerRef.current!.scrollTop = clientHeight * scrollIndex;
+    } else if (scrollIndex > 0) {
       this.mainContainerRef.current!.scrollTop =
-        this.mainContainerRef.current!.clientHeight * scrollIndex;
+        clientHeight * (scrollIndex - 1);
+    }
+  };
+
+  scrollDown = () => {
+    const { scrollIndex } = this.state;
+    if (scrollIndex < 3) {
+      this.mainContainerRef.current!.scrollTop =
+        this.mainContainerRef.current!.clientHeight * (scrollIndex + 1);
     }
   };
 
@@ -113,24 +128,32 @@ class Home extends Component<HomeProps, HomeState> {
           <section className="section" id="section-1">
             1
           </section>
-          <section className="section" id="section-2" style={{background:"red"}}>
+          <section
+            className="section"
+            id="section-2"
+            style={{ background: "red" }}
+          >
             2
           </section>
-          <section className="section" id="section-3" style={{background:"green"}}>
+          <section
+            className="section"
+            id="section-3"
+            style={{ background: "green" }}
+          >
             3
           </section>
-          <section className="section" id="section-4" style={{background:"yellow"}}>
+          <section
+            className="section"
+            id="section-4"
+            style={{ background: "yellow" }}
+          >
             4
           </section>
         </div>
 
         <div className="section-button">
-          <button onClick={(e) => this.handleScroll(scrollIndex - 1)}>
-            UP
-          </button>
-          <button onClick={(e) => this.handleScroll(scrollIndex + 1)}>
-            Down
-          </button>
+          <button onClick={this.scrollUp}>UP</button>
+          <button onClick={this.scrollDown}>Down</button>
         </div>
       </>
     );
