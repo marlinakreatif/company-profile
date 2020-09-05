@@ -8,6 +8,7 @@ import {
   Button,
   Container,
 } from "react-bootstrap";
+import { Dashboard, Products, Testimoni, News } from "../features";
 
 type HomeProps = {};
 type HomeState = {
@@ -77,7 +78,6 @@ class Home extends Component<HomeProps, HomeState> {
   };
 
   render() {
-    const { scrollIndex } = this.state;
     return (
       <>
         <Navbar
@@ -126,28 +126,28 @@ class Home extends Component<HomeProps, HomeState> {
           onScroll={this.onScroll}
         >
           <section className="section" id="section-1">
-            1
+            <Dashboard />
           </section>
           <section
             className="section"
             id="section-2"
             style={{ background: "red" }}
           >
-            2
+            <Products />
           </section>
           <section
             className="section"
             id="section-3"
             style={{ background: "green" }}
           >
-            3
+            <News />
           </section>
           <section
             className="section"
             id="section-4"
             style={{ background: "yellow" }}
           >
-            4
+            <Testimoni />
           </section>
         </div>
 
