@@ -8,7 +8,7 @@ import {
   Button,
   Container,
 } from "react-bootstrap";
-import { Dashboard, Products, Testimoni, News } from "../features";
+import { Banner, Products, Testimoni, News } from "../features";
 
 type HomeProps = {};
 type HomeState = {
@@ -67,9 +67,9 @@ class Home extends Component<HomeProps, HomeState> {
     } else {
       index = 3;
     }
-    console.log(
-      `scrollTop : ${scrollTop} ,clientHeight:${clientHeight}, Index: ${index}`
-    );
+    // console.log(
+    //   `scrollTop : ${scrollTop} ,clientHeight:${clientHeight}, Index: ${index}`
+    // );
     if (index !== scrollIndex) {
       this.setState({
         scrollIndex: index,
@@ -83,12 +83,12 @@ class Home extends Component<HomeProps, HomeState> {
         <Navbar
           collapseOnSelect
           expand="lg"
-          bg="dark"
+          bg="main"
           variant="dark"
           fixed="top"
         >
           <Container>
-            <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar.Brand href="#home">Akar Pinang Herbal</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
@@ -126,34 +126,26 @@ class Home extends Component<HomeProps, HomeState> {
           onScroll={this.onScroll}
         >
           <section className="section" id="section-1">
-            <Dashboard />
+            <Banner />
           </section>
-          <section
-            className="section"
-            id="section-2"
-            style={{ background: "red" }}
-          >
+          <section className="section" id="section-2">
             <Products />
           </section>
-          <section
-            className="section"
-            id="section-3"
-            style={{ background: "green" }}
-          >
+          <section className="section" id="section-3">
             <News />
           </section>
-          <section
-            className="section"
-            id="section-4"
-            style={{ background: "yellow" }}
-          >
+          <section className="section" id="section-4">
             <Testimoni />
           </section>
         </div>
 
         <div className="section-button">
-          <button onClick={this.scrollUp}>UP</button>
-          <button onClick={this.scrollDown}>Down</button>
+          <div id="up" onClick={this.scrollUp}>
+            <i className="fa fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div id="down" onClick={this.scrollDown}>
+            <i className="fa fa-chevron-down" aria-hidden="true"></i>
+          </div>
         </div>
       </>
     );

@@ -3,8 +3,8 @@ import { Title } from "../../components";
 
 export default function Testimoni() {
   return (
-    <div>
-      <Title title="Testimoni" variant="white" />
+    <div className="section-padd">
+      <Title title="Testimoni" variant="black" />
     </div>
   );
 }

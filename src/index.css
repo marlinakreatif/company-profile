@@ -8,7 +8,7 @@ h1.line {
   position: relative;
 }
 h1.line.black {
-  color: black;
+  color: rgb(102, 102, 102);
 }
 h1.line.white {
   color: white;
@@ -21,6 +21,9 @@ h1.line.green {
 }
 h1.line.blue {
   color: blue;
+}
+h1.line.gold {
+  color: gold;
 }
 
 h1.line::before {
@@ -46,7 +49,7 @@ h1.line::after {
 
 h1.line.black::after,
 h1.line.black::before {
-  background: black;
+  background: rgb(102, 102, 102);
 }
 h1.line.white::after,
 h1.line.white::before {
@@ -65,4 +68,22 @@ h1.line.green::before {
   background: green;
 }
 
+h1.line.gold::after,
+h1.line.gold::before {
+  background: gold;
+}
+
 /* END COMPONENTS */
+
+.bg-main {
+  background-color: #fcc200 !important;
+}
+
+.carousel-img-item {
+  max-height: 100vh;
+}
+
+.section-padd {
+  padding: 20px;
+  padding-top: 75px;
+}

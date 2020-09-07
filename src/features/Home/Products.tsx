@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import { Title } from "../../components";
 
 export default function Products() {
-    return (
-        <div>
-            <Title title="Produk" variant="white"/>
-        </div>
-    )
+  return (
+    <div className="section-padd">
+      <Title title="Produk Kami" />
+    </div>
+  );
 }

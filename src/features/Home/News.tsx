@@ -3,8 +3,8 @@ import { Title } from "../../components";
 
 export default function News() {
     return (
-        <div>
-            <Title title="Berita" variant="white"/>
+        <div className="section-padd">
+            <Title title="Berita" variant="black"/>
         </div>
     )
 }

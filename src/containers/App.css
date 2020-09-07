@@ -1,8 +1,7 @@
 .section {
   width: 100%;
   height: 100vh;
-  background-color: aquamarine;
-  padding: 75px 15px 15px 15px;
+  display: block;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -23,6 +22,45 @@
   position: absolute;
   bottom: 15px;
   right: 15px;
-  width: 60px;
-  background: aquamarine;
+  z-index: 100;
+}
+
+.section-button > #up,
+.section-button > #down {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 235, 205, 0.411);
+  margin: 10px 5px;
+  border: 1px solid rgba(245, 245, 245, 0.623);
+  border-radius: 10px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 25px;
+  color: #000000c0;
+}
+
+.section-button > #up:hover,
+.section-button > #down:hover {
+  transform: scale(1.1, 1.1);
+  cursor: pointer;
+}
+
+.section-button > #up:active,
+.section-button > #down:active {
+  transform: scale(0.9, 0.9);
+}
+
+.custom-caption {
+  top: 25%;
+  right: 150px !important;
+  left: unset !important;
+  color: gray !important;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.849);
+  border-radius: 10px;
+  padding: 15px;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
+  box-shadow: 2px 2px 5px 0px rgba(115, 115, 115, 1);
 }
